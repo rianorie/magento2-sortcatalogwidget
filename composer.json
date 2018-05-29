@@ -1,0 +1,34 @@
+{
+    "name": "elastomatic/magento2-sortcatalogwidget",
+    "description": "Module that adds the option to sort by attribute in a catalogwidget",
+    "license": "MIT",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "email": "rian.orie@gmail.com",
+            "name": "Rian Orie",
+            "homepage": "https://elastomatic.com",
+            "role": "Leader"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "magento/module-catalog-widget": "^100.2.0"
+    },
+    "keywords": [
+      "magento 2",
+      "magento 2 widget",
+      "magento 2 catalog widget"
+      "catalog widget",
+      "sort widget"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Elastomatic\\SortCatalogWidget\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

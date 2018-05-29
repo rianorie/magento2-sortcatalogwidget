@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="products_list">
+        <parameters>
+            <parameter name="sort_by" xsi:type="text" required="false" visible="true">
+                <label translate="true">Attribute to sort the products by</label>
+            </parameter>
+            <parameter name="sort_direction" xsi:type="select" visible="true" required="false"
+                       source_model="Elastomatic\SortCatalogWidget\Model\Config\Source\Direction">
+                <label translate="true">Sort direction</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
