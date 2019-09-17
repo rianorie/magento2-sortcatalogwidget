@@ -13,6 +13,9 @@ class AfterCreateCollection
          * @var \Magento\CatalogWidget\Block\Product\ProductsList $subject
          */
 
+        // reset any previous sortings
+        $result->getSelect()->reset(\Zend_Db_Select::ORDER);
+
         // if there's a sort_by attribute defined, add a sort to the collection
         if ($subject->hasData('sort_by')) {
 
@@ -22,8 +25,11 @@ class AfterCreateCollection
                 $direction = Select::SQL_DESC;
             }
 
-            $result->setOrder($subject->getData('sort_by'), $direction);
+            $result->setOrder($subject->getData('sort_by'), $direction)->load();
         }
+
+        // additionally sort by created at after attribute/position
+        $result->getSelect()->order('created_at ' . Select::SQL_DESC);
 
         return $result;
     }
